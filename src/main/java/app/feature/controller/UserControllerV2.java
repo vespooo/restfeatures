@@ -1,8 +1,7 @@
 package app.feature.controller;
 
-import app.core.apiversion.ApiVersion;
-import app.feature.domain.User;
 import app.feature.service.UserService;
+import app.rest.apiversion.ApiVersion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

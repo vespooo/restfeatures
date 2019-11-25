@@ -1,4 +1,4 @@
-package app.core.apiversion;
+package app.rest.apiversion;
 
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
 

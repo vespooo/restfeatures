@@ -1,4 +1,4 @@
-package app.core.apiversion;
+package app.rest.apiversion;
 
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,6 @@
-package app.core.apiversion;
+package app.rest.apiversion;
 
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
@@ -31,12 +30,13 @@ public class ApiVersionRequestMappingHandlerMapping extends RequestMappingHandle
         if(annotation != null){
             versions.addAll(Arrays.asList(annotation.versions()));
             versions.add(annotation.value());
-            versions.stream()
+            versions = versions.stream()
                     .filter(v -> !v.isEmpty())
+                    .distinct()
                     .collect(Collectors.toList());
         }
 
         //return obtainApplicationContext().getBean(ApiVersionCondition.class, version);
-        return (versions != null && !versions.isEmpty() ? new ApiVersionCondition(versions) : null);
+        return (!versions.isEmpty() ? new ApiVersionCondition(versions) : null);
     }
 }

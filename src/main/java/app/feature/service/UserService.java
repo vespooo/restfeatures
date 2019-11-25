@@ -1,24 +1,15 @@
 package app.feature.service;
 
 import app.feature.domain.User;
-import app.feature.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
-public class UserService {
+public interface UserService {
+    List<User> getUsers();
 
-    @Autowired
-    private UserRepository userRepository;
+    User getUser(Long id);
 
-    public List<User> getUsers() {
-        return userRepository.findAll();
-    }
+    User save(User user);
 
-    public Optional<User> getUser(Long id) {
-        return userRepository.findById(id);
-    }
+    User update(User user);
 }

@@ -28,4 +28,8 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public boolean isValid() {
+        return name != null;
+    }
 }
